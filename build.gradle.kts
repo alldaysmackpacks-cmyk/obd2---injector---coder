@@ -11,18 +11,16 @@ android {
         applicationId = "au.com.fuelcoder"
         minSdk = 26
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.0-ranger"
+        versionCode = 3
+        versionName = "1.1-ranger"
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
-        }
+        release { isMinifyEnabled = false }
     }
 
     sourceSets["main"].manifest.srcFile("AndroidManifest.xml")
-    sourceSets["main"].java.srcDirs(".", "core/src/main/kotlin")
+    sourceSets["main"].java.srcDirs("src/main/java", "core/src/main/kotlin")
     sourceSets["main"].res.srcDir("src/main/res")
 
     compileOptions {
@@ -30,9 +28,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
+    kotlinOptions { jvmTarget = "17" }
 }
 
 dependencies {
