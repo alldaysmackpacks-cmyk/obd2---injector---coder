@@ -21,6 +21,10 @@ android {
         }
     }
 
+    sourceSets["main"].manifest.srcFile("AndroidManifest.xml")
+    sourceSets["main"].java.srcDirs(".", "core/src/main/kotlin")
+    sourceSets["main"].res.srcDir("src/main/res")
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -29,10 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-
-    // The protocol core is pure Kotlin and lives outside the app module so it
-    // can be compiled and unit-tested on the JVM (see core/run_tests.sh).
-    sourceSets["main"].java.srcDirs("src/main/java", "../core/src/main/kotlin")
 }
 
 dependencies {
@@ -40,5 +40,4 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.fragment:fragment-ktx:1.8.2")
-    // org.json is provided by the Android platform (no dependency needed)
 }
