@@ -1,0 +1,5 @@
+plugins { id 'com.android.application' }
+
+android { namespace 'au.com.fuelcoder'; compileSdk 35
+    defaultConfig { applicationId 'au.com.fuelcoder'; minSdk 26; targetSdk 35; versionCode 1; versionName 'Demo 1.0' }
+}
